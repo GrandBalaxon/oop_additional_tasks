@@ -13,24 +13,28 @@
 """
 
 class Number:
+    value: int
 
     def __init__(self, value):
-        ...
+        self.value = value
 
-    def ...(self):
-        ...
+    def get(self) -> int:
+        return self.value
 
-    def ...:
-        ...
+    def add(self, addend: int) -> int:
+        self.value += addend
+        return self.value
 
-    def ...:
-        ...
+    def subtract(self, subtrahend: int) -> int:
+        self.value -= subtrahend
+        return self.value
 
 
-# код для проверки 
-n = Number(7)
-print(n.get())  # 7
-n.add(3)
-print(n.get())  # 10
-n.substract(5)
-print(n.get())  # 5
+if __name__ == '__main__':
+    # код для проверки
+    n = Number(7)
+    print(n.get())  # 7
+    n.add(3)
+    print(n.get())  # 10
+    n.subtract(5)
+    print(n.get())  # 5
