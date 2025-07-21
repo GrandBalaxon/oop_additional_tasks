@@ -14,17 +14,39 @@
 
 
 class Car:
-    pass
+    def __init__(self, mark, model, year):
+        self.mark = mark
+        self.model = model
+        self.year = year
+
+    def get_mark(self):
+        return self.mark
+
+    def get_model(self):
+        return self.model
+
+    def get_year(self):
+        return self.year
 
 
-# код для проверки 
-car = Car("Tesla", "Model S", 2022)
-print(car.get_make())  # Tesla
-print(car.get_model())  # Model S
-print(car.get_year())  # 2022
+class ElectricCar(Car):
+    def __init__(self, mark, model, year, battery_size):
+        super().__init__(mark, model, year)
+        self.battery_size = battery_size
 
-electric_car = ElectricCar("Tesla", "Model S", 2022, 100)
-print(electric_car.get_make())  # Tesla
-print(electric_car.get_model())  # Model S
-print(electric_car.get_year())  # 2022
-print(electric_car.get_battery_size())  # 100
+    def get_battery_size(self):
+        return self.battery_size
+
+
+if __name__ == '__main__':
+    # код для проверки
+    car = Car("Tesla", "Model S", 2022)
+    print(car.get_mark())  # Tesla
+    print(car.get_model())  # Model S
+    print(car.get_year())  # 2022
+
+    electric_car = ElectricCar("Tesla", "Model S", 2022, 100)
+    print(electric_car.get_mark())  # Tesla
+    print(electric_car.get_model())  # Model S
+    print(electric_car.get_year())  # 2022
+    print(electric_car.get_battery_size())  # 100

@@ -24,9 +24,11 @@ class Cat(Animal):
         print('Meow!')
 
 
+if __name__ == '__main__':
+    animals = [Dog('Dog1'), Dog('Dog2'), Cat('Cat1'), Dog('Dog3')]
 
-animals = [Dog('Dog1'), Dog('Dog2'), Cat('Cat1'), Dog('Dog3')]
-
-for animal in animals:
-    # Должно выводиться Bark или Meow в зависимости от того какой класс
-    pass
+    for animal in animals:
+        if isinstance(animal, Dog):
+            animal.bark()
+        elif isinstance(animal, Cat):
+            animal.meow()
